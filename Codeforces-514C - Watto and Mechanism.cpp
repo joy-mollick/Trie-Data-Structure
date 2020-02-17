@@ -3,7 +3,7 @@ using namespace std;
 
 const int ALPHABET_SIZE = 3;//only a,b,c will be occured
 string s;
-// trie node each node contains a boolean and 26 nodes address
+// trie node each node contains a boolean and 3 nodes address
 struct TrieNode
 {
     struct TrieNode *children[ALPHABET_SIZE];
@@ -36,7 +36,7 @@ void insert(struct TrieNode *root, string key)
             }// if not previously added , then added .
         pCrawl = pCrawl->children[index];
     }
-    pCrawl->isEndOfWord = true;//last node as marked as End of Word
+    pCrawl->isEndOfWord = true;//last node as marked as End of Word,leaf node
 }
 
 /*
